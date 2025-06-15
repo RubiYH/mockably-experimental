@@ -1,0 +1,197 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.App {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px 30px 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.App h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+}
+
+.todo-form {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.todo-form input[type="text"] {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.todo-form input[type="text"]:focus {
+  border-color: #7b8cde;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(123, 140, 222, 0.2);
+}
+
+.todo-form button {
+  padding: 12px 20px;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.todo-form button:hover {
+  background-color: #4a9b4a;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-list li {
+  background-color: #f9f9f9;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e7e7e7;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.todo-list li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.todo-list li.completed .todo-text h3,
+.todo-list li.completed .todo-text p {
+  text-decoration: line-through;
+  color: #a0a0a0;
+}
+
+.todo-text {
+  flex-grow: 1;
+  margin-right: 15px;
+}
+
+.todo-text h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2em;
+  color: #34495e;
+}
+
+.todo-text p {
+  margin: 0 0 10px 0;
+  font-size: 0.95em;
+  color: #555;
+  white-space: pre-wrap; /* Allows content to wrap */
+}
+
+.todo-text small {
+  font-size: 0.8em;
+  color: #7f8c8d;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0; /* Prevent actions from shrinking too much */
+}
+
+.todo-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85em;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+.todo-actions button:active {
+  transform: scale(0.95);
+}
+
+.todo-actions button.delete {
+  background-color: #e74c3c;
+  color: white;
+}
+.todo-actions button.delete:hover {
+  background-color: #c0392b;
+}
+
+.todo-actions button:not(.delete) {
+  background-color: #3498db;
+  color: white;
+}
+.todo-actions button:not(.delete):hover {
+  background-color: #2980b9;
+}
+
+.App > p {
+  text-align: center;
+  color: #777;
+  margin-top: 30px;
+}
+
+/* Styles for Edit Mode */
+.todo-list li.editing {
+  background-color: #e8f0fe; /* Light blue background for editing item */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.edit-form input[type="text"],
+.edit-form textarea {
+  padding: 10px;
+  border: 1px solid #b0bec5;
+  border-radius: 4px;
+  font-size: 1em;
+  width: calc(100% - 22px); /* Adjust for padding and border */
+}
+
+.edit-form textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.edit-actions button {
+  padding: 8px 15px;
+  font-size: 0.9em;
+}
+
+.edit-actions button.cancel {
+  background-color: #78909c; /* Neutral cancel button */
+}
+.edit-actions button.cancel:hover {
+  background-color: #607d8b;
+}
